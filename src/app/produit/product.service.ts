@@ -15,8 +15,8 @@ export class ProductService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  addToPromotion(uuid: string): Observable<any> {
-    const promotionData = { percentage :30,status:"ENcour",product:{uuid:uuid}};
+  addToPromotion(uuid: string,percentage:number): Observable<any> {
+    const promotionData = { percentage :percentage,status:"ENcour",product:{uuid:uuid}};
     return this.http.post(this.promotionApiUrl, promotionData);
   }
 }

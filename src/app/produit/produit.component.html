@@ -50,9 +50,30 @@
               {{product.price}}$
             </div>
           </div>
-          <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addToPromotion(product.uuid)">Add to Promotion</a></div>
+
+
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#yourModalId">
+            Add Promotion
+          </button>
+
+          <div class="modal fade" id="yourModalId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Promotion Modal</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="md-form ml-0 mr-0">
+                    <input type="text" type="text" id="form29" class="form-control form-control-sm validate ml-0" [(ngModel)]="percentage">
+                    <label data-error="wrong" data-success="right" for="form29" class="ml-0">Percentage</label>
+                  </div>
+                </div>
+                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                  <div class="text-center"><a class="btn btn-outline-dark mt-auto" (click)="addToPromotion(product.uuid,percentage)"> Promotion</a></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

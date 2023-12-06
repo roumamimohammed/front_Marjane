@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProduitComponent } from './produit/produit.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PromotionComponent } from './promotion/promotion.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { PromotionComponent } from './promotion/promotion.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
