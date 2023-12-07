@@ -23,7 +23,7 @@ export class PromotionComponent {
     );
   }
 
-  Accepted(uuidp: string, percentage: number): void {
+  Accepted(uuidp: string, percentage: number) {
     this.PromotionService.Accepted(uuidp, percentage).subscribe()
     Swal.fire({
       title: 'Promotion',
