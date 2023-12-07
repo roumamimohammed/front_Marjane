@@ -42,14 +42,19 @@ export class PromotionComponent {
   }
 
   Refused(uuidp:string,percentage:number): void {
-    this.PromotionService.Refused(uuidp,percentage).subscribe(
-      (response) => {
-        console.log('Product Promoted  successfully:', response);
-      },
-      (error) => {
-        console.error('Error adding promotion:', error);
-      }
-    );
-  }
-
-}
+    this.PromotionService.Refused(uuidp,percentage).subscribe()
+    Swal.fire({
+      title: 'Promotion',
+      text: 'refused',
+      icon: 'success',
+    }).then(() => {
+      this.PromotionService.getPromotion().subscribe(
+        (data) => {
+          this.promotions = data;
+        },
+        (error) => {
+          console.error('Error fetching products:', error);
+        }
+      );
+    });
+  }}
